@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="da1a1615-fcc3-49ea-9da7-240ac901eb73" name="dev">
+        <fileTransfer rootFolder="/var/www/html/internship/lobko" accessType="SFTP" host="ready-for-feedback3.com" port="25566" sshConfigId="2851e585-3279-41a5-bc4e-64996356307b" sshConfig="leob0@ready-for-feedback3.com:25566 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
