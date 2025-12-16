@@ -50,6 +50,18 @@ add_filter('tiny_mce_before_init', function ($init_array) {
                 'selector' => 'h1,h2,h3,h4,h5,h6,p,li',
                 'wrapper' => false,
             ],
+            [
+                'title' => 'Heading 7',
+                'classes' => 'heading',
+                'selector' => 'h1,h2,h3,h4,h5,h6,p,li',
+                'wrapper' => false,
+            ],
+            [
+                'title' => 'Heading 8',
+                'classes' => 'paragraph',
+                'selector' => 'h1,h2,h3,h4,h5,h6,p,li',
+                'wrapper' => false,
+            ],
         ],
     ];
 

@@ -40,4 +40,5 @@ class FoundationNavigation extends \Walker_Nav_Menu
         }
         parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
     }
+
 }

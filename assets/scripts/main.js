@@ -2,7 +2,7 @@
 import './autoload/**/*'; // eslint-disable-line
 
 // Import local dependencies
-import './plugins/lazyload';
+// import './plugins/lazyload';
 import './plugins/modernizr.min';
 import 'slick-carousel';
 import 'jquery-match-height';

@@ -1,6 +1,6 @@
 <?php
 
-use theme\CreateLazyImg;
+//use theme\CreateLazyImg;
 use theme\DynamicAdmin;
 use theme\WlAcfGfField;
 
