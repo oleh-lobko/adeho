@@ -76,7 +76,7 @@ array_map(function ($filename) {
     //    'gutenberg-support', // !!!IMPORTANT Comment the "Disable gutenberg" filter to enable Gutenberg
     //    'woo-customizations',
     //    'divi-support',
-    //    'elementor-support',
+        'elementor-support',
     //    'shortcodes',
     'acf-placeholder',
     'pressable',

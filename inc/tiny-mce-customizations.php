@@ -62,6 +62,12 @@ add_filter('tiny_mce_before_init', function ($init_array) {
                 'selector' => 'h1,h2,h3,h4,h5,h6,p,li',
                 'wrapper' => false,
             ],
+            [
+                'title' => 'Paragraph small',
+                'classes' => 'paragraph-small',
+                'selector' => 'h1,h2,h3,h4,h5,h6,p,li',
+                'wrapper' => false,
+            ],
         ],
     ];
 

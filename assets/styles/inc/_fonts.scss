@@ -15,3 +15,11 @@
   src: url('../../fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf')
     format('truetype');
 }
+@font-face {
+  font-family: 'Font Awesome';
+  font-style: normal;
+  font-weight: 400 900;
+  font-stretch: 100%;
+  font-display: fallback;
+  src: url('../../fonts/Font Awesome 7 Free-Solid-900.otf') format('truetype');
+}

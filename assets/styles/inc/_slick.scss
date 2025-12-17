@@ -1,9 +1,9 @@
 /* Slick slider default styles */
 
 // Override slick variables (to use default slick styles just remove variables below)
-//$slick-font-family: '';
-//$slick-prev-character: '\f104';
-//$slick-next-character: '\f105';
+$slick-font-family: '';
+$slick-prev-character: '\f053';
+$slick-next-character: '\f054';
 //$slick-dot-character: '\f111';
 $slick-arrow-color: $white;
 $slick-dot-color: $primary-color;
@@ -16,21 +16,34 @@ $slick-arrow-size: 2rem;
 
 /* Arrows */
 .slick-arrow {
-  width: calc($slick-arrow-size / 2);
-  height: $slick-arrow-size;
-  z-index: 1;
-
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 0;
+  cursor: pointer;
+  z-index: 5;
+  font-family: 'Font Awesome', 'Font Awesome', sans-serif !important;
   &::before {
     font-weight: 900;
     font-size: $slick-arrow-size;
   }
 }
+.slick.list{}
 .slick-prev {
-  left: 2rem;
+  left: 0;
 }
-
+.slick-prev:before {
+  content: '\f053';
+  color: #f26d22 !important;
+}
+.slick-next:before {
+  content: '\f054';
+  color: #f26d22 !important;
+}
 .slick-next {
-  right: 2rem;
+  right: 0;
 }
 
 /* Dots */

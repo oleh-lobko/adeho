@@ -214,9 +214,20 @@ input[type='button'] {
 }
 .paragraph {
   font-size: 24px;
+  line-height: 1.3;
   color: #4c4a4c;
-  font-weight: 400;
-  font-family: 'RobotoSlab-Regular', Sans-serif;
+  font-weight: 300;
+  font-family: 'RobotoSlab-Light', Sans-serif;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.paragraph-small {
+  font-size: 14px;
+  line-height: 1;
+  color: #4c4a4c;
+  font-weight: 300;
+  font-family: 'RobotoSlab-Light', Sans-serif;
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;

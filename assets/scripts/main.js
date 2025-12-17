@@ -21,7 +21,7 @@ import objectFitImages from 'object-fit-images';
  * Import scripts from Custom Elementor widgets
  */
 // eslint-disable-next-line import/no-unresolved
-// import '../blocks/elementor/**/index.js';
+import '../blocks/elementor/**/index.js';
 
 /**
  * Import scripts from Custom ACF Gutenberg blocks
