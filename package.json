@@ -17,6 +17,7 @@
     "node": ">= 18.17.0"
   },
   "scripts": {
+    "build:complete": "yarn run fix:scripts && yarn run fix:styles && yarn run build",
     "build": "webpack --progress --config build/webpack.config.js --env skip-config-validation",
     "build:production": "yarn run build --env production",
     "build:production:analyze": "yarn run build:production --analyze",

@@ -21,7 +21,7 @@ $slick-arrow-size: 2rem;
   transform: translateY(-50%);
   background: none;
   border: none;
-  font-size: 0;
+  font-size: 0 !important;
   cursor: pointer;
   z-index: 5;
   font-family: 'Font Awesome', 'Font Awesome', sans-serif !important;
@@ -30,9 +30,10 @@ $slick-arrow-size: 2rem;
     font-size: $slick-arrow-size;
   }
 }
-.slick.list{}
+.slick.list {
+}
 .slick-prev {
-  left: 0;
+  transform: translateX(100%);
 }
 .slick-prev:before {
   content: '\f053';

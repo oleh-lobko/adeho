@@ -210,6 +210,9 @@ $(window).on('load', function () {
   if ($preloader.length) {
     $preloader.addClass('preloader--hidden');
   }
+  copyElement();
+  moveDown();
+  moveTop();
 });
 
 /**
@@ -227,3 +230,90 @@ $(window).on('resize', function () {
 $(window).on('scroll', function () {
   // jQuery code goes here
 });
+
+export const copyElement = () => {
+  const copyLinkButton = document.querySelector('.js-copy-element');
+
+  if (copyLinkButton) {
+    copyLinkButton.addEventListener('click', function () {
+      const link = copyLinkButton.innerText.trim();
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard
+          .writeText(link)
+          .then(() => showNotification('Copied'))
+          .catch(() => fallbackCopy(link));
+      } else {
+        fallbackCopy(link);
+      }
+    });
+  }
+  function fallbackCopy(text) {
+    const temp = document.createElement('textarea');
+    temp.value = text;
+    document.body.appendChild(temp);
+    temp.select();
+    try {
+      document.execCommand('copy');
+      showNotification('Copied !');
+    } catch (err) {
+      console.error('Error copy:', err);
+    }
+    document.body.removeChild(temp);
+  }
+  function showNotification(text) {
+    let notificationMessage = document.querySelector('.notification-message');
+    if (!notificationMessage) {
+      const notificationHtml = `
+        <div class="notification-message">
+          ${text}
+        </div>`;
+      document.body.insertAdjacentHTML('beforeend', notificationHtml);
+      notificationMessage = document.querySelector('.notification-message');
+    }
+    notificationMessage.style.opacity = '1';
+
+    setTimeout(() => {
+      notificationMessage.style.opacity = '0';
+    }, 2000);
+  }
+};
+export const moveDown = () => {
+  document.addEventListener('click', (e) => {
+    const button = e.target.closest('.scroll-next');
+    if (!button) return;
+    const header = document.querySelector('header');
+    const headerH = header ? header.offsetHeight : 0;
+
+    const sections = Array.from(
+      document.querySelectorAll('.elementor-element')
+    );
+    if (!sections.length) return;
+
+    const y = button.getBoundingClientRect().top + window.pageYOffset;
+
+    let currentIndex = -1;
+    for (let i = 0; i < sections.length; i++) {
+      const top = sections[i].getBoundingClientRect().top + window.pageYOffset;
+      if (top <= y + 5) currentIndex = i;
+      else break;
+    }
+
+    const next = sections[currentIndex + 1];
+    if (!next) return;
+
+    const targetTop =
+      next.getBoundingClientRect().top + window.pageYOffset - headerH;
+
+    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+  });
+};
+export const moveTop = () => {
+  document.addEventListener('click', (e) => {
+    const button = e.target.closest('.scroll-top');
+    if (!button) return;
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
+};

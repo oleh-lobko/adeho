@@ -10,7 +10,7 @@
         <div class="slider-intro text-center">
             <h2 class="heading"><?php echo esc_html($section_title); ?></h2>
             <div class="divider">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/divider.webp" alt="divider">
+                <img class="icon-image" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/divider.webp" alt="divider">
             </div>
         </div>
     <?php endif; ?>

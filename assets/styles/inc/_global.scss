@@ -168,3 +168,17 @@ img {
     opacity: 1;
   }
 }
+.notification-message {
+  position: fixed;
+  bottom: 20px;
+  transform: translateX(-50%);
+  left: 50%;
+  background: #f06d22;
+  color: #4c4a4c;
+  padding: 12px 24px;
+  border-radius: 8px;
+  z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
