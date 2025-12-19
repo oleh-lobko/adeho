@@ -205,13 +205,16 @@ input[type='button'] {
 }
 .heading {
   font-size: 36px;
-  color: #4c4a4c;
+  color: #4c4a4c !important;
   font-weight: 400;
   font-family: 'RobotoSlab-Bold', Sans-serif;
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
   line-height: 1;
+  @include breakpoint(large down) {
+    font-size: 28px;
+  }
 }
 .paragraph {
   font-size: 24px;

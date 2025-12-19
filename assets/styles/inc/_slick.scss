@@ -10,12 +10,14 @@ $slick-dot-color: $primary-color;
 $slick-dot-color-active: $primary-color;
 $slick-dot-size: 1rem;
 $slick-arrow-size: 2rem;
+$slick-arrow-size-small: 1.6rem;
 
 @import '~slick-carousel/slick/slick.scss';
 @import '~slick-carousel/slick/slick-theme.scss';
 
 /* Arrows */
 .slick-arrow {
+  background-color: transparent !important;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -28,6 +30,9 @@ $slick-arrow-size: 2rem;
   &::before {
     font-weight: 900;
     font-size: $slick-arrow-size;
+    @include breakpoint(small down) {
+      font-size: $slick-arrow-size-small;
+    }
   }
 }
 .slick.list {
@@ -62,4 +67,34 @@ $slick-arrow-size: 2rem;
       }
     }
   }
+}
+//Custom
+.slick-list {
+  margin-inline: 4rem;
+  @media (max-width: 768px) {
+    margin-inline: 2rem;
+  }
+}
+.slide-image {
+  max-width: 350px;
+  height: auto;
+  aspect-ratio: 35/20;
+  min-width: 150px;
+}
+@media (max-width: 768px) {
+  .slide-image {
+    max-width: 100%;
+  }
+}
+.slick-arrow {
+  padding: 0 !important;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.slick-prev {
+  left: 0 !important;
+}
+.slick-slide {
+  display: block;
 }

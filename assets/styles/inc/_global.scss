@@ -182,3 +182,31 @@ img {
   transition: opacity 0.3s ease;
   pointer-events: none;
 }
+.js-copy-element {
+  cursor: pointer;
+}
+.js-copy-element p:hover {
+  color: #f26d22 !important;
+}
+.not-found {
+  .label {
+    background-color: #4c4a4c !important;
+    color: $white;
+  }
+}
+.header-overlay {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.header-overlay.is-menu-open {
+  background-color: #4c4a4c !important;
+}
+.header-overlay.is-menu-open .elementor-menu-toggle svg {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+.header-overlay.is-menu-open .elementor-menu-toggle:hover svg {
+  fill: #ffffff !important;
+  opacity: 0.8;
+}

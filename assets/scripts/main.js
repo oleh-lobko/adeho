@@ -213,6 +213,7 @@ $(window).on('load', function () {
   copyElement();
   moveDown();
   moveTop();
+  headerAnimation();
 });
 
 /**
@@ -316,4 +317,37 @@ export const moveTop = () => {
       behavior: 'smooth',
     });
   });
+};
+export const headerAnimation = () => {
+  const menuToggle = document.querySelector('.elementor-menu-toggle');
+  const headerOverlay = document.querySelector('.header-overlay');
+
+  if (menuToggle && headerOverlay) {
+    // Створюємо спостерігач, який стежить за зміною класів та атрибутів
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        // Перевіряємо зміну класу або атрибута aria-expanded
+        if (
+          mutation.attributeName === 'class' ||
+          mutation.attributeName === 'aria-expanded'
+        ) {
+          const isOpen =
+            menuToggle.classList.contains('elementor-active') ||
+            menuToggle.getAttribute('aria-expanded') === 'true';
+
+          if (isOpen) {
+            headerOverlay.classList.add('is-menu-open');
+          } else {
+            headerOverlay.classList.remove('is-menu-open');
+          }
+        }
+      });
+    });
+
+    // Стежимо і за класами, і за атрибутами
+    observer.observe(menuToggle, {
+      attributes: true,
+      attributeFilter: ['class', 'aria-expanded'],
+    });
+  }
 };
